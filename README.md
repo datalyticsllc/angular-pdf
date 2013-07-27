@@ -1,5 +1,7 @@
 # angular-pdf
 
+This is a work in progress...
+
 Angular module for [Mozilla's](https://github.com/mozilla/pdf.js/) PDF.js implementation.  This is just
 a starting point for developing a full-featured PDF viewer in Angular.JS.
 
