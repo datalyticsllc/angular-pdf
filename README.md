@@ -1,6 +1,7 @@
 # angular-pdf
 
-Angular module for [Mozilla's](https://github.com/mozilla/pdf.js/) PDF.js implementation.
+Angular module for [Mozilla's](https://github.com/mozilla/pdf.js/) PDF.js implementation.  This is just
+a starting point for developing a full-featured PDF viewer in angular.
 
 ## PDF.js
 
@@ -62,7 +63,7 @@ they have CORS support for the buckets.  In order to enable CORS on a bucket per
 </CORSConfiguration>
 ```
 
-You should now be able to server
+You should now be able to view the PDF in the webpage :-)
 
 
 
