@@ -48,7 +48,7 @@ var FindStates = {
 };
 
 PDFJS.imageResourcesPath = './images/';
-  PDFJS.workerSrc = 'pdf.js';
+PDFJS.workerSrc = '../vendor/mozilla/pdf.js';
 
 var mozL10n = document.mozL10n || document.webL10n;
 
@@ -264,8 +264,6 @@ var Cache = function cacheCache(size) {
   };
 };
 
-
-
 var DownloadManager = (function DownloadManagerClosure() {
 
   function download(blobUrl, filename) {
@@ -337,8 +335,6 @@ var DownloadManager = (function DownloadManagerClosure() {
 
   return DownloadManager;
 })();
-
-
 
 // Settings Manager - This is a utility for saving settings
 // First we see if localStorage is available
@@ -579,7 +575,6 @@ var PDFFindBar = {
     }
   }
 };
-
 
 
 /* globals PDFFindBar, PDFJS, FindStates, FirefoxCom */

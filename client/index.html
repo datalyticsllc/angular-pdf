@@ -1,90 +1,38 @@
-<html>
-<body>
-<div>
-    <button id="prev" onclick="goPrevious()">Previous</button>
-    <button id="next" onclick="goNext()">Next</button>
-    &nbsp; &nbsp;
-    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-</div>
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.js PDF Demo</title>
 
-<div>
-    <canvas id="the-canvas" style="border:1px solid black"></canvas>
-</div>
+    <link href="vendor/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="vendor/bootstrap/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="viewer-full/viewer.css"/>
 
-<!-- Use latest PDF.js build from Github -->
-<script type="text/javascript" src="pdf.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/ui-bootstrap-0.4.0.min.js"></script>
+    <script type="text/javascript" src="vendor/mozilla/l10n.js"></script>
+    <script type="text/javascript" src="vendor/mozilla/pdf.js"></script>
+    <script type="text/javascript" src="vendor/mozilla/debugger.js"></script>
 
-<script type="text/javascript">
-    //
-    // NOTE:
-    // Modifying the URL below to another server will likely *NOT* work. Because of browser
-    // security restrictions, we have to use a file server with special headers
-    // (CORS) - most servers don't support cross-origin browser requests.
-    //
-    var url = 'http://cdn.mozilla.net/pdfjs/helloworld.pdf';
+    <script type="text/javascript" src="viewer/viewer.js"></script>
+    <script type="text/javascript" src="viewer-full/viewer-app.js"></script>
+    <script type="text/javascript" src="viewer-full/viewer-partial.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 
-    //
-    // Disable workers to avoid yet another cross-origin issue (workers need the URL of
-    // the script to be loaded, and currently do not allow cross-origin scripts)
-    //
-    PDFJS.disableWorker = true;
+</head>
 
-    var pdfDoc = null,
-            pageNum = 1,
-            scale = 0.8,
-            canvas = document.getElementById('the-canvas'),
-            ctx = canvas.getContext('2d');
+<body ng-controller="AppCtrl">
 
-    //
-    // Get page info from document, resize canvas accordingly, and render page
-    //
-    function renderPage(num) {
-        // Using promise to fetch the page
-        pdfDoc.getPage(num).then(function(page) {
-            var viewport = page.getViewport(scale);
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
+    <div class="row-fluid">
 
-            // Render PDF page into canvas context
-            var renderContext = {
-                canvasContext: ctx,
-                viewport: viewport
-            };
-            page.render(renderContext);
-        });
+        <div ng-view></div>
 
-        // Update page counters
-        document.getElementById('page_num').textContent = pageNum;
-        document.getElementById('page_count').textContent = pdfDoc.numPages;
-    }
+    </div>
 
-    //
-    // Go to previous page
-    //
-    function goPrevious() {
-        if (pageNum <= 1)
-            return;
-        pageNum--;
-        renderPage(pageNum);
-    }
 
-    //
-    // Go to next page
-    //
-    function goNext() {
-        if (pageNum >= pdfDoc.numPages)
-            return;
-        pageNum++;
-        renderPage(pageNum);
-    }
-
-    //
-    // Asynchronously download PDF as an ArrayBuffer
-    //
-    PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
-        pdfDoc = _pdfDoc;
-        renderPage(pageNum);
-    });
-</script>
 </body>
+
 </html>
+
+
+
