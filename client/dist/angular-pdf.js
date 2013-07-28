@@ -111,6 +111,12 @@ angular.module("docs/docs.tpl.html", []).run(["$templateCache", function($templa
     "                <li>\n" +
     "                    <a style=\"cursor:pointer;\" ng-click=\"loadForm('http://cdn.mozilla.net/pdfjs/helloworld.pdf')\">Hello World Form</a>\n" +
     "                </li>\n" +
+    "                <li>\n" +
+    "                    <a style=\"cursor:pointer;\" ng-click=\"loadForm('https://s3.amazonaws.com/formcatalog/123_HHP_Trans_OA_v1_web.pdf')\">123_HHP_Trans_OA_v1_web</a>\n" +
+    "                </li>\n" +
+    "                <li>\n" +
+    "                    <a style=\"cursor:pointer;\" ng-click=\"loadForm('https://s3.amazonaws.com/formcatalog/120_HHP_SNSOCROC_OASIS_091214_v3_web.pdf')\">120_HHP_SNSOCROC_OASIS_091214_v3_web.pdf</a>\n" +
+    "                </li>\n" +
     "\n" +
     "            </ul>\n" +
     "        </div>\n" +
@@ -237,12 +243,12 @@ angular.module("viewer/viewer.tpl.html", []).run(["$templateCache", function($te
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "                <!--<div id=\"loadingBar\">-->\n" +
-    "                <!--<div class=\"progress\">-->\n" +
-    "                <!--<div class=\"glimmer\">-->\n" +
-    "                <!--</div>-->\n" +
-    "                <!--</div>-->\n" +
-    "                <!--</div>-->\n" +
+    "                <div id=\"loadingBar\">\n" +
+    "                <div class=\"progress\">\n" +
+    "                <div class=\"glimmer\">\n" +
+    "                </div>\n" +
+    "                </div>\n" +
+    "                </div>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "\n" +
