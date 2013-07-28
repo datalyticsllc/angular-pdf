@@ -13,17 +13,6 @@ PDF.js is community-driven and supported by Mozilla Labs. Our goal is to
 create a general-purpose, web standards-based platform for parsing and
 rendering PDFs.
 
-## Contributing
-
-PDF.js is an open source project and always looking for more contributors. To
-get involved checkout:
-
-+ [Workflow](https://github.com/mozilla/pdf.js/wiki/Contributing)
-+ [Style Guide](https://github.com/mozilla/pdf.js/wiki/Style-Guide)
-+ [Good Beginner Bugs](https://github.com/mozilla/pdf.js/issues?direction=desc&labels=5-good-beginner-bug&page=1&sort=created&state=open)
-+ [Priorities](https://github.com/mozilla/pdf.js/issues/milestones)
-+ [Attend a Public Meeting](#weekly-public-meetings)
-
 ## Getting Started
 
 ### Online demo (Mozilla)
@@ -32,6 +21,7 @@ get involved checkout:
 
 ## Building and running angular-pdf
 
++ Use Grunt to build the project into the /dist folder
 + Start the node.js web server: node ./server/web-server.js
 + Set the document you want to display in the viewer.js file
 + Open up the viewer.html page and enjoy

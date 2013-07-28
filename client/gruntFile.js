@@ -53,6 +53,9 @@ module.exports = function (grunt) {
     copy: {
       assets: {
         files: [{ dest: '<%= distdir %>/assets/', src : '**', expand: true, cwd: 'src/assets/' }]
+      },
+      mozilla: {
+        files: [{ dest: '<%= distdir %>', src : '**', expand: true, cwd: 'vendor/mozilla/' }]
       }
     },
     karma: {
@@ -105,8 +108,24 @@ module.exports = function (grunt) {
         dest: '<%= distdir %>/angular-resource.js'
       },
       bootstrap: {
-        src:['vendor/angular-ui/bootstrap/*.js'],
+        src:['vendor/bootstrap/*.js'],
         dest: '<%= distdir %>/bootstrap.js'
+      },
+      pdfdebug: {
+        src:['vendor/mozilla/debugger.js'],
+        dest: '<%= distdir %>/debugger.js'
+      },
+      pdfl10n: {
+        src:['vendor/mozilla/l10n.js'],
+        dest: '<%= distdir %>/l10n.js'
+      },
+      viewer: {
+        src:['vendor/mozilla/viewer.js'],
+        dest: '<%= distdir %>/viewer.js'
+      },
+      pdf: {
+        src:['vendor/mozilla/pdf.js'],
+        dest: '<%= distdir %>/pdf.js'
       }
     },
     uglify: {
