@@ -4,10 +4,11 @@
  * Licensed MIT
  */
 angular.module('app', [
-    'document',
-    'viewer',
-    'service.doc'
-  ])
+  'document',
+  'viewer',
+  'service.doc',
+  'templates.app',
+  'templates.common'])
 
   .controller('AppCtrl', ['$scope', '$location', function ($scope, $location) {
 
@@ -60,10 +61,11 @@ angular.module('document', [])
 
       DocService.setUrl(url);
 
-      $location.path('/viewer-app'); // path not hash
+      $location.path('/viewer'); // path not hash
     }
 
   }]);
+
 
 
 

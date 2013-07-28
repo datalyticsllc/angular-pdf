@@ -15,9 +15,10 @@ angular.module('document', [])
 
       DocService.setUrl(url);
 
-      $location.path('/viewer-app'); // path not hash
+      $location.path('/viewer'); // path not hash
     }
 
   }]);
+
 
 
